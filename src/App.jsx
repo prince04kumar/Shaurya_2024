@@ -1,9 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Landing from './components/Team/Landing';
-import Ocs from './components/Team/Ocs';
-import Hcs from './components/Team/Hcs';
-import Navbarshaurya from './pages/Navbar';
 import PreLoader from './components/preLoader/preloader';
 import LoadingSpinner from './components/LoadingSpinner/loadingspinner';
 
@@ -23,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Event />} />
           <Route path="/team" element={<Team />} />
+          {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
       </main>
       {/* <Footer /> */}
