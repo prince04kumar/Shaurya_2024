@@ -1,0 +1,131 @@
+
+
+  /* loader ka chlau paani wla  */
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #ffffff;
+}
+.loader-main{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    background: #f9f8f7;
+    border-radius: 50%;
+    box-shadow: inset 0 0 30px #d6d5d4;
+    overflow: hidden ;
+}
+.loader img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 12s linear infinite;
+    opacity: 0.7; 
+    z-index: 10;
+}
+.loader-main::before{
+    content: '';
+    position: absolute;
+    /* top: -150%;
+    left: -50%; */
+    width: 200%;
+    height: 200%;
+    transform: translateX(-50%);
+    border-radius: 40%;
+    background: #f76844;
+    opacity: 0.8;
+    animation: animate 7s ease-in-out infinite;
+
+}
+@keyframes animate{
+    0%{
+        top: 250px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100%{
+        top: -50px;
+        transform: translateX(-50%) rotate(360deg);
+    }
+
+}
+
+.loader-main::after{
+    content: '';
+    position: absolute;
+    /* top: -150%; */
+    /* left: -50%; */
+    width: 200%;
+    height: 200%;
+    border-radius: 40%;
+    transform: translateX(-50%);
+    background: #f76844;
+    opacity: 0.7;
+    animation: animate2 7s ease-in-out infinite;
+}
+@keyframes animate2{
+    0%{
+        top: 250px;
+        transform:translateX(-50%) rotate(360deg);
+    }
+    100%{
+        top: -50px;
+        transform: translateX(-50%) rotate(0deg);
+    }
+    
+}
+
+.loader-text{
+    display: flex;
+    padding: 10px;
+    min-width: 200px;
+    font-weight: 600;
+    z-index: 10;
+    font-size: 20px;
+    color: rgb(246, 106, 71);
+    justify-content: space-between;
+    
+}
+.loader-text .dots{
+    left: 20px;
+    top: 12px;
+    position: relative;
+}
+.loader-text .dots::before, .dots .middle-dot,
+.dot::after{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #f76844;
+    animation: jumping 0.7s infinite ease-in-out;
+}
+.middle-dot{
+    background-color: #3f3f3f;
+    animation: delay 0.1s;
+}
+.dots::before{
+    content: "";
+    position: absolute;
+    right: 10px;
+}
+.dots::after{
+    content: "";
+    position: absolute;
+    left: 9px;
+    animation-delay: 0.2s;
+}
+@keyframes jumping{
+    50%{
+        transform: translateY(-5px);
+    }
+}
