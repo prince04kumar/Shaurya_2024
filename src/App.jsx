@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreLoader from './components/preLoader/preloader';
 import LoadingSpinner from './components/LoadingSpinner/loadingspinner';
@@ -10,19 +10,36 @@ import { Event } from './pages/Event';
 import Navbar from './pages/Navbar';
 
 function App() {
+
+  const [loading,setLoading]=useState(false);
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },3000);
+  },[])
+
   return (
     <Router>
-      <Navbar />
-      <main className="pt-0">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/events" element={<Event />} />
-          <Route path="/team" element={<Team />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
-        </Routes>
-      </main>
-      {/* <Footer /> */}
+      {
+        loading ? <PreLoader loading={loading}/>
+        :
+        <>
+        <Navbar />
+        <main className="pt-0">
+        
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/events" element={<Event />} />
+            <Route path="/team" element={<Team />} />
+          </Routes>
+        </main>
+        {/* <Footer /> */}
+
+        </>
+      }
     </Router>
   )
 }
