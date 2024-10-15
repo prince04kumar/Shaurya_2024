@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Landing from './components/Team/Landing';
 import Ocs from './components/Team/Ocs';
@@ -14,18 +14,36 @@ import { Event } from './pages/Event';
 import Navbar from './pages/Navbar';
 
 function App() {
+
+  const [loading,setLoading]=useState(false);
+
+  useEffect(()=>{
+    setLoading(true)
+    setTimeout(()=>{
+      setLoading(false)
+    },7000);
+  },[])
+
   return (
     <Router>
-      <Navbar />
-      <main className="pt-0">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/events" element={<Event />} />
-          <Route path="/team" element={<Team />} />
-        </Routes>
-      </main>
-      {/* <Footer /> */}
+      {
+        loading ? <PreLoader loading={loading}/>
+        :
+        <>
+        <Navbar />
+        <main className="pt-0">
+        
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/events" element={<Event />} />
+            <Route path="/team" element={<Team />} />
+          </Routes>
+        </main>
+        {/* <Footer /> */}
+
+        </>
+      }
     </Router>
   )
 }
