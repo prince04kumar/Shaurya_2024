@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Landing from './components/Team/Landing';
-import Ocs from './components/Team/Ocs';
-import Hcs from './components/Team/Hcs';
-import Navbarshaurya from './pages/Navbar';
 import PreLoader from './components/preLoader/preloader';
 import LoadingSpinner from './components/LoadingSpinner/loadingspinner';
 
