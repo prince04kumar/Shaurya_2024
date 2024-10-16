@@ -6,7 +6,7 @@ import LoadingSpinner from './components/LoadingSpinner/loadingspinner';
 import { About } from './pages/About';
 import { Home } from './pages/Home';
 import { Team } from './pages/Team';
-import { Event } from './pages/Event';
+import  Event  from './pages/Event';
 import Navbar from './pages/Navbar';
 
 function App() {
