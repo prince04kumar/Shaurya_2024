@@ -11,14 +11,24 @@ const App = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        // Check if the page is being refreshed
-        if (performance.navigation.type === 1) {
-            setLoading(true);
-            setTimeout(() => {
-                setLoading(false);
-            }, 3000);
-        }
-    }, []);
+      if (!sessionStorage.getItem('preloaderShown')) {
+          setLoading(true);
+          setTimeout(() => {
+              setLoading(false);
+              sessionStorage.setItem('preloaderShown', 'true');
+          }, 3000);
+      }
+  }, []);
+
+    useEffect(() => {
+      // Check if the page is being refreshed
+      if (performance.navigation.type === 1) {
+          setLoading(true);
+          setTimeout(() => {
+              setLoading(false);
+          }, 3000);
+      }
+  }, []);
 
     return (
 
