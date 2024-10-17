@@ -11,7 +11,7 @@ const Ocs = () => {
                         <span className="relative z-10 tracking-widest">OVERALL COORDINATORS</span>
                         <span className="absolute bottom-0 left-0 w-full h-0.5 bg-custom-brown mt-3 sm:mt-5"></span>
                     </h1>
-                    <p className="text-slate-600 text-xs sm:text-sm lg:text-xl font-kaushan">The Operations and Communication Society is a student-run society that aims to provide students with a platform to enhance their communication and leadership skills. The society conducts various events and workshops throughout the year to help students develop their soft skills and become better communicators.</p>
+                    <p className="text-slate-600 text-xs sm:text-sm lg:text-xl font-serif">“The Operations and Communication Society is a student-run society that aims to provide students with a platform to enhance their communication and leadership skills. The society conducts various events and workshops throughout the year to help students develop their soft skills and become better communicators.”</p>
                 </div>            
                 <div className="w-full lg:w-2/3 bg-custom-blue flex flex-wrap gap-2 sm:gap-4 lg:gap-6 p-1 sm:p-2 lg:p-5 justify-center items-center rounded-3xl overflow-y-auto">
                    {assets1.map((item)=>{

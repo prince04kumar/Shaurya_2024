@@ -4,7 +4,7 @@ import assets from '../../assets/assets';
 const Landing = () => {
   return (
     <div 
-      className='relative min-h-screen w-screen flex justify-center bg-cover bg-center bg-no-repeat'
+      className='relative h-[70vh] md:h-screen w-screen flex justify-center bg-cover bg-center bg-no-repeat'
       style={{ backgroundImage: `url(${assets.backgroundImage})` }}
     >
       {/* Fade overlay with reduced exposure */}
