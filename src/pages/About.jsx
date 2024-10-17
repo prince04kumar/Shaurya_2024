@@ -1,138 +1,119 @@
-import React, { useState } from 'react';
-import '../App.css';
-
+import React from "react";
+import '../app.css';
 
 export const About = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
+  return (
+    <div className="bg-gradient-to-r from-[#F7EBD8] to-[#F1DBBF] min-h-screen py-10 px-5 sm:px-10 lg:px-20">
+      <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="p-8 lg:p-12">
+          {/* Header Section */}
+          <h1 className="text-5xl font-extrabold text-center text-[#642011] bg-[#F1DBBF] py-4 px-8 rounded-full mb-6 ">
+            About Shaurya
+          </h1>
+          <p className="text-center text-xl text-[#642011] mb-10">
+            The Sports Committee of NIT Raipur - Inspiring excellence through sportsmanship, teamwork, and leadership.
+          </p>
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData);
-        alert('Form submitted!');
-    };
-
-    
-    
-    
-
-    return (
-        <div className='xl:bg-[url("../Assets/aboutbg.jpeg")] bg-[url("../Assets/mob.jpg")]   bg-cover bg-fixed min-h-screen overflow-hidden'>
-            <div className='backdrop-blur'>
-            <div className='flex justify-center  overflow-hidden'>
-                <div className='w-3/4'>
-                    <div className='bgs text-amber-900 rounded-full flex items-center  justify-center pt-2 pb-2 mb-10 mt-20 xl:h-[10vh] h-[5vh]'>
-                        <h1 className='xl:text-5xl text-6xl font-semibold'>About Us</h1>
-                    </div>
+          {/* Section 1: Our Mission */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-[#642011] mb-4">Our Moments in Sports</h2>
+            <p className="text-lg text-[#642011] leading-relaxed mb-6">
+              Take a look at some of the most exciting moments captured during our sporting events. These images showcase the energy, spirit, and dedication of our athletes and participants.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Replace with actual images */}
+              {[
+                "/Assets/sports10.jpg", 
+                "/Assets/sports2.jpg", 
+                "/Assets/sports9.jpg", 
+                "/Assets/sports4.jpg", 
+                "/Assets/sports8.jpg", 
+                "/Assets/sports6.jpg"
+              ].map((src, index) => (
+                <div
+                  key={index}
+                  className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105"
+                >
+                  <img
+                    src={src}
+                    alt={`Sport image ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-75"></div>
                 </div>
+              ))}
             </div>
-
-            <div className=' xl:flex-row flex-col flex mx-10 items-center justify-center xl:mt-10 '>
-                 
-                <div className='bgs text-amber-900  xl:h-[50vh] h-[30vh] w-[60vw] my-5 xl:w-[25vw] rounded-3xl xl:mx-10 flex justify-center items-center'>
-                    <p className='text-3xl flex justify-center items-center px-10'>Shaurya, the sports committee of NIT Raipur, fosters athletic talent, organizes events, and promotes teamwork and sportsmanship among students.</p>
-                </div>
-                <div className='bgs text-amber-900 xl:h-[50vh] h-[30vh] w-[60vw] my-5 xl:w-[25vw] rounded-3xl xl:mx-10 flex justify-center items-center'>
-                    <p className='text-3xl flex justify-center items-center px-10'>Shaurya, the sports committee of NIT Raipur, fosters athletic talent, organizes events, and promotes teamwork and sportsmanship among students.</p>
-                </div>
-                <div className='bgs text-amber-900 xl:h-[50vh] h-[30vh] w-[60vw] my-5 xl:w-[25vw] rounded-3xl xl:mx-10 flex justify-center items-center'>
-                    <p className='text-3xl flex justify-center items-center px-10'>Shaurya, the sports committee of NIT Raipur, fosters athletic talent, organizes events, and promotes teamwork and sportsmanship among students.</p>
-                </div>
+          </section>
+          
+          {/* Section 2: What We Do */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-[#642011] mb-4">What We Do</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h3 className="text-xl font-semibold text-[#642011]">Organize Competitions</h3>
+                <p className="text-[#642011] mt-2">
+                  We host inter-college and intra-college sports competitions throughout the year.
+                </p>
+              </div>
+              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h3 className="text-xl font-semibold text-[#642011]">National-Level Participation</h3>
+                <p className="text-[#642011] mt-2">
+                  We encourage and support our athletes to compete at national sports events.
+                </p>
+              </div>
+              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h3 className="text-xl font-semibold text-[#642011]">Sports Training & Coaching</h3>
+                <p className="text-[#642011] mt-2">
+                  We provide training sessions and coaching for a wide range of sports activities.
+                </p>
+              </div>
+              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h3 className="text-xl font-semibold text-[#642011]">Sports Facilities Management</h3>
+                <p className="text-[#642011] mt-2">
+                  We manage the sports facilities, ensuring all students have access to top-quality equipment.
+                </p>
+              </div>
+              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h3 className="text-xl font-semibold text-[#642011]">Collaborations</h3>
+                <p className="text-[#642011] mt-2">
+                  We collaborate with other institutions to foster a robust sports community.
+                </p>
+              </div>
+              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+                <h3 className="text-xl font-semibold text-[#642011]">Event Management</h3>
+                <p className="text-[#642011] mt-2">
+                  We organize grand sporting events, from annual sports fests to casual inter-hostel games.
+                </p>
+              </div>
             </div>
+          </section>
 
-            {/* Full-screen overlay section */}
-            <div className='relative flex justify-center items-center xl:h-screen h-[60vh]  w-screen absolute top-0 z-2 left-0 mt-20'>
-                {/* Center Box */}
-                <div className='relative z-9 flex items-center justify-center xl:h-[20vh] xl:w-[20vw] h-[10vh] w-[40vw]  bgs text-amber-900  rounded-full'>
-                    <p className='text-bold text-4xl text-bold text-center'>About Shaurya</p>
-                </div>
+          {/* Section 3: Stylish Photo Collection */}
 
-                {/* Corner Boxes */}
-                <div className='absolute xl:top-8 xl:left-40 top-20 left-32 xl:h-[40vh] xl:w-[25vw] h-[20vh] w-[30vw]  bgs text-amber-900 rounded-3xl'>
-                    <p className='text-2xl  flex justify-center items-center p-10'>Shaurya, the sports committee of NIT Raipur, fosters athletic talent, organizes events, and promotes teamwork and sportsmanship among students.</p>
-                </div>
-                <div className='absolute xl:top-8 xl:right-40 top-20 right-32 xl:h-[40vh] xl:w-[25vw] h-[20vh] w-[30vw] bgs text-amber-900 rounded-3xl'>
-                    <p className='text-2xl  flex justify-center items-center p-10'>Shaurya, the sports committee of NIT Raipur, fosters athletic talent, organizes events, and promotes teamwork and sportsmanship among students.</p>
-                </div>
-                <div className='absolute xl:bottom-8 xl:left-40 bottom-20 left-32  xl:h-[40vh] xl:w-[25vw] h-[20vh] w-[30vw] bgs text-amber-900 rounded-3xl'>
-                    <p className='text-2xl  flex justify-center items-center p-10'>Shaurya, the sports committee of NIT Raipur, fosters athletic talent, organizes events, and promotes teamwork and sportsmanship among students.</p>
-                </div>
-                <div className='absolute xl:bottom-8 xl:right-40 bottom-20 right-32 xl:h-[40vh] xl:w-[25vw] h-[20vh] w-[30vw] bgs text-amber-900 rounded-3xl'>
-                    <p className='text-2xl  flex justify-center items-center p-10'>Shaurya, the sports committee of NIT Raipur, fosters athletic talent, organizes events, and promotes teamwork and sportsmanship among students.</p>
-                </div>
+
+          {/* Section 4: Get Involved */}
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-[#642011] mb-4">Get Involved</h2>
+            <p className="text-lg text-[#642011] leading-relaxed">
+              Whether you're an experienced athlete or just looking to try something new, Shaurya has something for everyone. Get involved in our events, participate in training sessions, and showcase your talent in competitions. Follow us on social media for updates!
+            </p>
+          </section>
+
+          {/* Section 5: Contact Us */}
+          <section>
+            <h2 className="text-3xl font-bold text-[#642011] mb-4">Contact Us</h2>
+            <p className="text-lg text-[#642011] leading-relaxed mb-6">
+              Have questions? Reach out to us via email or visit our sports office on campus.
+            </p>
+            <div className="bgs p-6 rounded-lg shadow-md">
+              <h3 className="text-lg font-semibold text-[#642011] mb-2">Email:</h3>
+              <p className="text-[#642011]">shaurya@sports.nitrr.ac.in</p>
+              <h3 className="text-lg font-semibold text-[#642011] mt-4 mb-2">Address:</h3>
+              <p className="text-[#642011]">Shaurya Sports Committee, NIT Raipur, G.E. Road, Raipur - 492010</p>
             </div>
-
-            <div className='relative flex justify-center items-center xl:h-screen h-[60vh] w-screen absolute top-0 left-0 mt-20'>
-                <div className='xl:h-[80vh] xl:w-[70vw] h-[40vh] w-[80vw] bgs  rounded-3xl flex xl:flex-row flex-col justify-center items-center '>
-                    <div className='mx-5 my-5'>
-                        <h1 className='text-7xl text-amber-900 ml-20 font-bold'>Contact Details</h1>
-
-
-                    </div>
-                    <div className='xl:h-[65vh] xl:w-[35vw] h-[20vh] w-[60vw] xl:mx-10 text-orange-300 bg-amber-900 rounded-3xl flex flex-col items-center '>
-                        <h2 className='text-3xl  font-semibold mt-5'>Contact Us</h2>
-                        <hr className="w-96 h-0.5 mx-auto  bg-orange-300 border-0 rounded  my-1" />
-                         <div className="max-w-sm mx-auto p-4  rounded shadow">
-            <h2 className="text-lg  font-semibold mb-4">Contact Us</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-2 border border-gray-300 bg-transparent text-white rounded mb-2"
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-2 border border-gray-300 bg-transparent text-white rounded mb-2"
-                />
-                <textarea
-                    name="message"
-                    placeholder="Message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-2 border border-gray-300 bg-transparent text-white rounded mb-4"
-                ></textarea>
-                <button type="submit" className="w-full bg-orange-300 text-amber-900 p-2 rounded">
-                    Submit
-                </button>
-            </form>
+          </section>
         </div>
-                    
-        <hr className="w-96 h-0.5 mx-auto  bg-orange-300 border-0 rounded  my-1" />
-        <div className='flex justify-center  items-center '>
-            <img src='../Assets/ins.svg'  alt='Vector' height={50} width={50} className='mx-5 my-5'/>
-            <img src='../Assets/fac.svg'  alt='Vector' height={20} width={30} className='mx-5 my-5'/>
-            <img src='../Assets/lin.svg'  alt='Vector' height={50} width={50} className='mx-5 my-5'/>
-
-
-
-        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
-
-
