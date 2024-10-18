@@ -13,18 +13,13 @@ function App() {
 
   const [loading,setLoading]=useState(false);
 
-  // const [loading, setLoading] = useState(true); // Set loading to true initially
-
   useEffect(() => {
-    // Check if the page is loaded for the first time or refreshed
-    const navigationType = window.performance.getEntriesByType('navigation')[0].type;
-    
+    const navigationType = window.performance.getEntriesByType('navigation')[0].type; 
     if (navigationType === 'reload') {
-      // Only show preloader on initial load or page refresh, not during route changes
       setLoading(true);
       setTimeout(() => {
-        setLoading(false); // Hide the preloader after a delay
-      }, 3000); // Adjust the timeout delay as needed
+        setLoading(false); 
+      }, 3000); 
     }
   }, []); 
 
@@ -38,8 +33,6 @@ function App() {
         }, 3000);
     }
   }, []);
-
-
 
   return (
     <Router>
