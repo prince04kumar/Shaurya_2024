@@ -13,17 +13,31 @@ function App() {
 
   const [loading,setLoading]=useState(false);
 
-  useEffect(()=>{
-    setLoading(true)
-    setTimeout(()=>{
-      setLoading(false)
-    },3000);
-  },[])
+  useEffect(() => {
+    const navigationType = window.performance.getEntriesByType('navigation')[0].type; 
+    if (navigationType === 'reload') {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false); 
+      }, 3000); 
+    }
+  }, []); 
+
+  useEffect(() => {
+
+    if (!sessionStorage.getItem('preloaderShown') ) {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+            sessionStorage.setItem('preloaderShown', 'true');
+        }, 3000);
+    }
+  }, []);
 
   return (
     <Router>
       {
-        loading ? <PreLoader loading={loading}/>
+        loading  ? <PreLoader loading={loading}/>
         :
         <>
         <Navbar />
