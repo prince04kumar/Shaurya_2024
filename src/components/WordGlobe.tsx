@@ -1,8 +1,8 @@
 import React from "react";
 
-import "./WordGlobe.css";
+import "../styles/WordGlobe.css";
 
-import {TagCloud} from "@frank-mayer/react-tag-cloud";
+import { TagCloud } from "@frank-mayer/react-tag-cloud";
 import { TagCloudOptions } from "@frank-mayer/react-tag-cloud";
 // import { DividerClasses } from "@mui/material";
 
@@ -12,9 +12,9 @@ const WordGlobe = () => {
       <div className="text-sphere ">
         <span className="tagcloud">
           <TagCloud
-          className="text-xl"
+            className="text-xl"
             options={(w: Window & typeof globalThis): TagCloudOptions => ({
-              radius: Math.min(500,w.innerWidth,w.innerHeight) / 2,
+              radius: Math.min(500, w.innerWidth, w.innerHeight) / 2,
               maxSpeed: "normal",
             })}
           >

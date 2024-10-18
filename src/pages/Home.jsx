@@ -1,7 +1,7 @@
 import React from 'react'
-import WordGlobe from './WordGlobe'
-import ImageCarousel from './ImageCaraousel'
-import ImageCarousel2 from './ImageCaraousel2'
+import WordGlobe from '../components/WordGlobe'
+import ImageCarousel from '../components/ImageCaraousel'
+import ImageCarousel2 from '../components/ImageCaraousel2'
 
 export const Home = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import './ImageCarousel.css'; // Import your custom CSS
+import '../styles/ImageCarousel.css'; // Import your custom CSS
 
 const ImageCarousel2 = () => {
   const carouselRef = useRef(null);
