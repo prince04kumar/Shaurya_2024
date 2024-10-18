@@ -9,7 +9,7 @@ const ImageCarousel2 = () => {
     let scrollAmount = 0;
 
     const scrollImages = () => {
-      scrollAmount += 1; // Adjust this value for speed
+      scrollAmount += 100; // Adjust this value for speed
       if (scrollAmount >= carousel.scrollWidth / 2) {
         scrollAmount = 0; // Reset scroll to loop seamlessly
       }

@@ -1,12 +1,10 @@
 import React from "react";
-import { useEffect } from "react";
-import { Window } from "@mui/icons-material";
 
 import "./WordGlobe.css";
 
 import {TagCloud} from "@frank-mayer/react-tag-cloud";
 import { TagCloudOptions } from "@frank-mayer/react-tag-cloud";
-import { DividerClasses } from "@mui/material";
+// import { DividerClasses } from "@mui/material";
 
 const WordGlobe = () => {
   return (
@@ -14,9 +12,10 @@ const WordGlobe = () => {
       <div className="text-sphere ">
         <span className="tagcloud">
           <TagCloud
+          className="text-xl"
             options={(w: Window & typeof globalThis): TagCloudOptions => ({
               radius: Math.min(500,w.innerWidth,w.innerHeight) / 2,
-              maxSpeed: "fast",
+              maxSpeed: "normal",
             })}
           >
             {[
