@@ -1,11 +1,12 @@
 import React from 'react'
 import WordGlobe from './WordGlobe'
 import ImageCarousel from './ImageCaraousel'
+// import ImageCarousel2 from './ImageCaraousel2'
 
 export const Home = () => {
   return (
     <div className='semi-amber min-h-screen'>
-      <div className='h-96 '>
+      <div className='h-screen'>
          <ImageCarousel/>
       </div>
       <div className="flex md:flex-row sm:flex-col flex-col justify-around items-center">
@@ -31,6 +32,7 @@ export const Home = () => {
       </div>
 
         <p className="text-center flex justify-center text-3xl text-red-950 font-bold font-mono">Our Faculty</p>
+        {/* <ImageCarousel2/> */}
         <div className="grid sm:grid-cols-2 grid-col-1 gap-14 my-11 md:mx-[25%] sm:mx-[6%] mx-[25%] w-[50%] sm:w-[90%] md:w-[50%]">
           <div className="grid-cols-1 faculty relative">
             <div className='h-96'>
@@ -52,9 +54,9 @@ export const Home = () => {
 
 
         <div className='relative bg-black'>
-          <div className='flex h-32 opacity-45'>
-          <img src="flamingo3.png" className="object-fill w-[50%] h-32" alt="" />
-          <img src="Image4.jpg" className="object-fill w-[50%] h-32" alt="" />
+          <div className='flex h-screen opacity-45'>
+          <img src="flamingo3.png" className="object-fill w-[50%] h-screen" alt="" />
+          <img src="Image4.jpg" className="object-fill w-[50%] h-screen" alt="" />
           </div>
           <a href='/' className='text-white font-bold underline absolute text-3xl top-2'> Previous Events </a>
           <a href='/' className='text-white font-bold absolute underline text-3xl right-1 top-2'> Next Event </a>

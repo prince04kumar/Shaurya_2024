@@ -1,0 +1,19 @@
+.carousel-container {
+  width: 100%; /* Full width */
+  overflow: hidden; /* Hide the scrollbars */
+  white-space: nowrap; /* Prevent line breaks */
+  display: flex;
+  align-items: center;
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content; /* Ensure the width grows based on content */
+}
+
+.carousel-image {
+  width: 25vw; /* Display 4 images at a time (100vw / 4 = 25vw per image) */
+  height: 100vh; /* Full screen height */
+  object-fit: cover; /* Ensure the image covers the full container */
+  display: inline-block;
+}
