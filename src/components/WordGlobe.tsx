@@ -12,10 +12,10 @@ const WordGlobe = () => {
       <div className="text-sphere ">
         <span className="tagcloud">
           <TagCloud
-            className="text-xl"
+            className=""
             options={(w: Window & typeof globalThis): TagCloudOptions => ({
               radius: Math.min(500, w.innerWidth, w.innerHeight) / 2,
-              maxSpeed: "normal",
+              maxSpeed: "fast",
             })}
           >
             {[
