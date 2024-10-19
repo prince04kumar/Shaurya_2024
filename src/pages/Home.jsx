@@ -10,7 +10,7 @@ export const Home = () => {
         <ImageCarousel />
       </div>
       <div className="flex md:flex-row sm:flex-col flex-col justify-around items-center bg-black py-20">
-        <div className=" text-white text-sm">
+        <div className=" text-white sm:text-base text-sm">
           <WordGlobe />
         </div>
 
