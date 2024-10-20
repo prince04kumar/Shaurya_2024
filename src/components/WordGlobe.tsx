@@ -1,17 +1,18 @@
 import React from "react";
-import { useEffect } from "react";
 
-import "./WordGlobe.css";
+import "../styles/WordGlobe.css";
 
-import {TagCloud} from "@frank-mayer/react-tag-cloud";
+import { TagCloud } from "@frank-mayer/react-tag-cloud";
 import { TagCloudOptions } from "@frank-mayer/react-tag-cloud";
+// import { DividerClasses } from "@mui/material";
 
 const WordGlobe = () => {
   return (
     <>
-      <div className="text-sphere">
+      <div className="text-sphere ">
         <span className="tagcloud">
           <TagCloud
+            className=""
             options={(w: Window & typeof globalThis): TagCloudOptions => ({
               radius: Math.min(500, w.innerWidth, w.innerHeight) / 2,
               maxSpeed: "fast",
