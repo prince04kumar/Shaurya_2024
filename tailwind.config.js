@@ -21,6 +21,21 @@ export default {
           '11xl': '12rem',
           '12xl': '14rem',
         },
+        fontFamily: {
+          'jersey': ['"Jersey 15 Charted"', 'sans-serif'],
+        },
+        keyframes: {
+          'border-gradient': {
+            '0%, 100%': { borderColor: 'transparent', background: 'linear-gradient(90deg, #d97706, #b45309, #92400e)' },
+            '50%': { borderColor: 'transparent', background: 'linear-gradient(270deg, #92400e, #b45309, #d97706)' },
+          },
+        },
+        animation: {
+          'border-gradient': 'border-gradient 5s ease infinite',
+        },
+        fontSize: {
+            'mdl': '1.35rem', 
+          },
       },
     },
     plugins: [],
