@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { Team } from './pages/Team';
 import  Event  from './pages/Event';
 import Navbar from './pages/Navbar';
+import Footer from './pages/Footer';
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
             <Route path="/team" element={<Team />} />
           </Routes>
         </main>
+        <Footer/>
         {/* <Footer /> */}
 
         </>
