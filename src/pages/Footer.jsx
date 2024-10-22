@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Footer.css";
+import "../styles/Footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="shaurya__footer border-2 border-amber-600 animate-rotate-border  " id="contactus">
       <div className="shaurya__footer-container1">
         <div className="shaurya__footer-logos">
-          <img src="public\Assets\new.png" className="shaurya__footer-logo-shaurya1" />
+          <img src="\Assets\new.png" className="shaurya__footer-logo-shaurya1" />
         </div>
         <div className="shaurya__footer-social-container">
           <div className="shaurya__footer-social-links-container">
@@ -86,7 +86,7 @@ const Footer = () => {
       <div className="shaurya__footer-container2">
         <div className="shaurya__footer-container2-left">
           <div className="shaurya__footer-container2-left-content">
-            <img src="public\Assets\NIT.webp" />
+            <img src="\Assets\NIT.webp" />
             <div className="shaurya__footer-container2-left-text">
               <h4>About NIT Raipur</h4>
               <p>

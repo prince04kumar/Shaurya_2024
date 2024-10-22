@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="bg-amber-100 bg-opacity-30 backdrop-blur-lg shadow-lg py-0 pr-16 border-2 border-amber-600 animate-rotate-border">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <img src="Assets\new.png" alt="Logo" className="w-68 h-24" />
+        <img src="/Assets/new.png" alt="Logo" className="w-68 h-24" />
 
         {/* Menu links for larger screens */}
         <div className="hidden md:flex space-x-12 text-gray-600 font-semibold font-serif text-mdl">
