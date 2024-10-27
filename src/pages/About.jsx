@@ -48,37 +48,37 @@ export const About = () => {
           <section className="mb-12">
             <h2 className="text-3xl font-bold text-[#642011] mb-4">What We Do</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+              <div className="bg-[#F1DBBF] p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
                 <h3 className="text-xl font-semibold text-[#642011]">Organize Competitions</h3>
                 <p className="text-[#642011] mt-2">
                   We host inter-college and intra-college sports competitions throughout the year.
                 </p>
               </div>
-              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+              <div className="bg-[#F1DBBF] p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
                 <h3 className="text-xl font-semibold text-[#642011]">National-Level Participation</h3>
                 <p className="text-[#642011] mt-2">
                   We encourage and support our athletes to compete at national sports events.
                 </p>
               </div>
-              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+              <div className="bg-[#F1DBBF] p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
                 <h3 className="text-xl font-semibold text-[#642011]">Sports Training & Coaching</h3>
                 <p className="text-[#642011] mt-2">
                   We provide training sessions and coaching for a wide range of sports activities.
                 </p>
               </div>
-              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+              <div className="bg-[#F1DBBF] p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
                 <h3 className="text-xl font-semibold text-[#642011]">Sports Facilities Management</h3>
                 <p className="text-[#642011] mt-2">
                   We manage the sports facilities, ensuring all students have access to top-quality equipment.
                 </p>
               </div>
-              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+              <div className="bg-[#F1DBBF] p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
                 <h3 className="text-xl font-semibold text-[#642011]">Collaborations</h3>
                 <p className="text-[#642011] mt-2">
                   We collaborate with other institutions to foster a robust sports community.
                 </p>
               </div>
-              <div className="bgs p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
+              <div className="bg-[#F1DBBF] p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
                 <h3 className="text-xl font-semibold text-[#642011]">Event Management</h3>
                 <p className="text-[#642011] mt-2">
                   We organize grand sporting events, from annual sports fests to casual inter-hostel games.
@@ -104,7 +104,7 @@ export const About = () => {
             <p className="text-lg text-[#642011] leading-relaxed mb-6">
               Have questions? Reach out to us via email or visit our sports office on campus.
             </p>
-            <div className="bgs p-6 rounded-lg shadow-md">
+            <div className="bg-[#F1DBBF] p-6 rounded-lg shadow-md">
               <h3 className="text-lg font-semibold text-[#642011] mb-2">Email:</h3>
               <p className="text-[#642011]">shaurya@sports.nitrr.ac.in</p>
               <h3 className="text-lg font-semibold text-[#642011] mt-4 mb-2">Address:</h3>
