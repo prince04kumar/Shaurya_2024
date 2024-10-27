@@ -9,6 +9,7 @@ import { Team } from './pages/Team';
 import  Event  from './pages/Event';
 import Navbar from './pages/Navbar';
 import Footer from './pages/Footer';
+import "./app.css"
 
 function App() {
 
