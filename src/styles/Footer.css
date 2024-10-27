@@ -2,7 +2,7 @@
     font-family: serif;
     background-color: rgba(255, 204, 128, 0.8); /* Semi-transparent amber */
     color: #5d4037; /* Brown text */
-    width: 100%;
+    width: 100vw;
     max-width: 100rem;
     margin: 0px auto;
     overflow-y: hidden;
