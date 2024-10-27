@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PreLoader from './components/preLoader/preloader';
 import LoadingSpinner from './components/LoadingSpinner/loadingspinner';
 
-import './app.css';
 import { About } from './pages/About';
 import { Home } from './pages/Home';
 import { Team } from './pages/Team';
