@@ -11,6 +11,7 @@ const ImageCarousel = () => {
       interval={3000} // 3 seconds between slides
       transitionTime={500} // transition time in milliseconds
       showStatus={false} // hides the status of the carousel (current slide number)
+      stopOnHover={false}
     >
       <div>
         <img src="sports.png"  className='h-screen object-cover' alt="Sports" />
