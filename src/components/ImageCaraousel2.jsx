@@ -19,7 +19,11 @@ const ImageCarousel2 = () => {
       });
     };
 
-    const interval = setInterval(scrollImages, 20); // Speed of scroll (smaller = faster)
+    // Determine the scroll speed based on window size
+    const isMobile = window.innerWidth <= 600; // You can adjust the breakpoint as needed
+    const intervalSpeed = isMobile ? 70 : 20; // Slower speed for mobile, faster for laptop
+
+    const interval = setInterval(scrollImages, intervalSpeed); // Set the scrolling speed
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, []);
 
