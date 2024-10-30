@@ -6,11 +6,17 @@ function Event() {
     return (
         <div className="container mx-auto bg-orange-200">
             <div className="relative">
-                <img src="\carousel.jpg" alt="Athletes running on a track" className="w-full h-96 object-cover" />
-                <div className="absolute inset-0 flex items-center pl-8">
-                    <h1 className="text-5xl font-kaushan text-black">SHAURYA PRESENTS</h1>
-                </div>
-            </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmk6_aF93IuKJgww9H3E1yWzLTNv-bnbUcnA&s" alt="events-heading" className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-10xl text-orange-200 text-center" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+            EVENTS
+        </h1>
+        
+</div>
+
+
+           </div>
+                
             <div className="flex items-center justify-center my-8">
                 <img src={logo} alt="Logo" className="w-33 h-36 object-cover mr-4" />
                 <h2 className="text-3xl font-bold font-serif">GLIMPSES OF 2024 EVENTS</h2>
