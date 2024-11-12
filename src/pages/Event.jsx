@@ -13,12 +13,12 @@ function Event() {
             </div>
             <div className="flex items-center justify-center my-8">
                 <img src={logo} alt="Logo" className="w-33 h-36 object-cover mr-4" />
-                <h2 className="text-6xl font-bold font-serif">GLIMPSES OF 2024 EVENTS</h2>
+                <h2 className="text-3xl font-bold font-serif">GLIMPSES OF 2024 EVENTS</h2>
             </div>
             <div className="grid grid-cols-1 gap-8 px-12">
                 <div className="flex flex-col md:flex-row items-center">
-                    <img src="\sports.png" alt="National Sports Day poster" className="w-80 h-80 object-cover rounded-sm" />
-                    <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-xl top-0 px-12 pr-20">
+                    <img src="\sports day.jpg" alt="National Sports Day poster" className="w-80 h-80 object-cover rounded-sm" />
+                    <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-lg sm:text-xl px-4 sm:px-8  md:px-12  pr-6 sm:pr-10 md:pr-20">
                         The <b className='text-2xl font-serif'>SPORTS DAY</b> at NIT Raipur, organized by <span className='text-orange-700 font-bold'>SHAURYA - The Sports Committee</span>, is a vibrant celebration of athleticism and team spirit. The event kicks off with a grand inauguration and march past, followed by a variety of competitions including track and field events, team sports like football and basketball, and fun activities such as sack races and tug-of-war. The day ends with a closing ceremony where winners are honored, making it a memorable occasion filled with energy, unity, and sportsmanship.
                     </p>
                 </div>
@@ -32,9 +32,10 @@ function Event() {
 
                 <div className="flex flex-col md:flex-row items-center py-12">
                     <img src="\engn day.jpg" alt="Engineers day poster" className="w-80 h-90 object-cover rounded-sm" />
-                    <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-xl px-12 pr-20">
-                    <b className='text-2xl font-serif'>ENGINEER'S DAY</b>,  is an additional event organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, showcasing the diverse range of activities and competitions that NIT Raipur offers. The event includes various sports and cultural activities, promoting a spirit of unity and enthusiasm among the students. It is a day filled with excitement, teamwork, and memorable experiences, highlighting the vibrant campus life at NIT Raipur.
-                    </p>
+                    <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-lg sm:text-xl px-4 sm:px-8 md:px-12 pr-6 sm:pr-10 md:pr-20">
+    <b className='text-xl sm:text-2xl font-serif'>ENGINEER'S DAY</b>, is an additional event organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, showcasing the diverse range of activities and competitions that NIT Raipur offers. The event includes various sports and cultural activities, promoting a spirit of unity and enthusiasm among the students. It is a day filled with excitement, teamwork, and memorable experiences, highlighting the vibrant campus life at NIT Raipur.Overall, the event successfully celebrated the synergy between engineering and sports, inspiring participants to appreciate the innovation that drives both fields forward.
+</p>
+
                 </div>
 
 
@@ -47,10 +48,10 @@ function Event() {
 
                 <div className="flex flex-col md:flex-row items-center mt-8 py-12">
                     <img src="\samar.jpg" alt="Additional Event poster" className="w-80 h-90 object-cover rounded-sm" />
-                    <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-xl px-12 pr-20">
-                    <b className='text-2xl font-serif'>SAMAR</b> organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, the sports committee of NIT Raipur, is the institute's premier sports festival, bringing together students to compete in various sports like cricket, football, basketball, volleyball, and athletics. It promotes sportsmanship, teamwork, and fitness while fostering a vibrant atmosphere of competition and camaraderie. With enthusiastic participation and enthusiastic participation, Samar is a celebration of athletic passion and perseverance at NIT Raipur.
-                       ENGINEER'S DAY ,  is an additional event organized by SHAURYA, showcasing the diverse range of activities and competitions that NIT Raipur offers. The event includes various sports and cultural activities, promoting a spirit of unity and enthusiasm among the students. It is a day filled with excitement, teamwork, and memorable experiences, highlighting the vibrant campus life at NIT Raipur.
-                    </p>
+                    <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-lg sm:text-xl px-4 sm:px-8 md:px-12 pr-6 sm:pr-10 md:pr-20">
+    <b className='text-xl sm:text-2xl font-serif'>SAMAR</b> organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, the sports committee of NIT Raipur, is the institute's premier sports festival, bringing together students to compete in various sports like cricket, football, basketball, volleyball, and athletics. It promotes sportsmanship, teamwork, and fitness while fostering a vibrant atmosphere of competition and camaraderie. With enthusiastic participation and enthusiastic participation, Samar is a celebration of athletic passion and perseverance at NIT Raipur. It stands as a testament to the vibrant sports culture at NIT Raipur, uniting students through competition, camaraderie, and a shared passion for athletics.
+</p>
+
                 </div>
             </div>
 
