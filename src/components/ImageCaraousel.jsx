@@ -8,14 +8,36 @@ const ImageCarousel = () => {
       showThumbs={false}
       autoPlay
       infiniteLoop
-      interval={3000} // 3 seconds between slides
-      transitionTime={500} // transition time in milliseconds
-      showStatus={false} // hides the status of the carousel (current slide number)
-      stopOnHover={false}
-      swipeable={false}
+      interval={5000}
+      transitionTime={500}
+      showStatus={false}
+      stopOnHover={true}
+      swipeable={true}
+      showArrows={true}
+      dynamicHeight={false}
+      preventMovementUntilSwipeScrollTolerance={true}
+      swipeScrollTolerance={50}
+      renderArrowPrev={(clickHandler) => (
+        <button
+          onClick={clickHandler}
+          className="absolute left-0 z-10 p-3 bg-black/30 hover:bg-black/50 text-white rounded-r"
+          aria-label="Previous slide"
+        >
+          ←
+        </button>
+      )}
+      renderArrowNext={(clickHandler) => (
+        <button
+          onClick={clickHandler}
+          className="absolute right-0 z-10 p-3 bg-black/30 hover:bg-black/50 text-white rounded-l"
+          aria-label="Next slide"
+        >
+          →
+        </button>
+      )}
     >
       <div>
-        <img src="sports.png"  className='h-screen object-cover' alt="Sports" />
+        <img src="sports.png"  className='h-screen object-cover' alt="" />
       </div>
       <div>
         <img src="Screenshot 2024-10-18 194117.png" className='h-screen object-cover' alt="Sports" />

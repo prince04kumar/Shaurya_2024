@@ -1,80 +1,146 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrolled]);
 
   const menuLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' }, // Update if you create an About page
+    { name: 'About', href: '/about' },
     { name: 'Events', href: '/events' },
     { name: 'Team', href: '/team' },
-    { name: 'Contact Us', href: '/contact' }, // Update if you create a Contact page
+    { name: 'Contact Us', href: '/contact' },
   ];
 
-  return (
-    <nav className="bg-amber-100 bg-opacity-30 backdrop-blur-lg shadow-lg py-0 pr-16 border-2 border-amber-600 animate-rotate-border">
-      <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <img src="/Assets/new.png" alt="Logo" className="w-68 h-24" />
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
-        {/* Menu links for larger screens */}
-        <div className="hidden md:flex space-x-12 text-gray-600 font-semibold font-serif text-mdl">
-          {menuLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href} // Use Link instead of a tag
-              className="hover:text-amber-800 hover:underline hover:underline-offset-8 transition duration-300 ease-in-out transform hover:scale-105"
-            >
-              {link.name}
+  return (
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+      scrolled 
+        ? 'bg-amber-100/95 backdrop-blur-lg shadow-md py-2 border-b border-amber-200' 
+        : 'bg-[#deded755] py-4'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center">
+          {/* Logo Section */}
+          <div className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex items-center space-x-2">
+              <img 
+                src="/Assets/new.png" 
+                alt="Logo" 
+                className={`transition-all duration-300 ${
+                  scrolled ? 'h-16' : 'h-20'
+                } hover:scale-105`}
+              />
             </Link>
-          ))}
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {menuLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.href}
+                className={`relative px-3 py-2 text-base font-bold transition-all duration-300 group rounded-lg p-2 ${
+                  scrolled 
+                    ? isActive(link.href)
+                      ? 'text-amber-800 bg-[#fafaf9]'
+                      : 'text-amber-700 hover:text-amber-900'
+                    : isActive(link.href)
+                      ? 'text-amber-900 bg-[#fafaf9]'
+                      : 'text-amber-800 hover:text-amber-950 '
+                }`}
+              >
+                {link.name}
+                <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 transition-transform duration-300 ${
+                  scrolled ? 'bg-amber-500' : 'bg-amber-700'
+                } group-hover:scale-x-100`}></span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-lg transition-colors duration-300 ${
+                scrolled 
+                  ? 'text-amber-700 hover:bg-amber-200/50' 
+                  : 'text-amber-900 hover:bg-amber-100/50 bg-[#fafaf9]'
+              }`}
+            >
+              <span className="sr-only">Open menu</span>
+              <div className="w-6 h-6 flex items-center justify-center relative">
+                <span 
+                  className={`absolute w-6 h-0.5 transform transition-all duration-300 ${
+                    scrolled ? 'bg-amber-700' : 'bg-amber-900'
+                  } ${isOpen ? 'rotate-45' : '-translate-y-1'}`}
+                ></span>
+                <span 
+                  className={`absolute w-6 h-0.5 ${
+                    scrolled ? 'bg-amber-700' : 'bg-amber-900'
+                  } ${isOpen ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+                ></span>
+                <span 
+                  className={`absolute w-6 h-0.5 transform transition-all duration-300 ${
+                    scrolled ? 'bg-amber-700' : 'bg-amber-900'
+                  } ${isOpen ? '-rotate-45' : 'translate-y-1'}`}
+                ></span>
+              </div>
+            </button>
+          </div>
         </div>
 
-        {/* Hamburger icon for smaller screens */}
-        <div className="md:hidden">
-          <button
-            onClick={toggleMenu}
-            className="text-amber-900 focus:outline-none"
-            aria-label="Toggle Menu"
-          >
-            <svg
-              className="w-10 h-12"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
-          </button>
+        {/* Mobile Menu */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isOpen 
+            ? 'max-h-96 opacity-100 mt-4' 
+            : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className={`rounded-lg shadow-lg ring-1 ring-amber-200 ${
+            scrolled ? 'bg-amber-50' : 'bg-white'
+          } divide-y divide-amber-100`}>
+            <div className="pt-4 pb-6 px-5 space-y-6">
+              <div className="flex flex-col space-y-4">
+                {menuLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 ${
+                      scrolled
+                        ? isActive(link.href)
+                          ? 'text-amber-900 bg-amber-100'
+                          : 'text-amber-700 hover:bg-amber-100 hover:text-amber-900'
+                        : isActive(link.href)
+                          ? 'text-amber-900 bg-amber-100'
+                          : 'text-amber-700 hover:bg-amber-100 hover:text-amber-900'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Dropdown menu for smaller screens */}
-      {isOpen && (
-        <div className="md:hidden flex flex-col items-center space-y-4 mt-4 text-gray-600 font-semibold text-mdl font-serif">
-          {menuLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href} // Use Link instead of a tag
-              className="hover:text-amber-900 hover:underline hover:underline-offset-8 transition duration-300 ease-in-out transform hover:scale-105"
-              onClick={toggleMenu} // Close menu on link click
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      )}
     </nav>
   );
 };

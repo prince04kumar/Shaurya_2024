@@ -1,34 +1,41 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import '../styles/ImageCarousel.css'; // Import your custom CSS
 
 const ImageCarousel2 = () => {
   const carouselRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollAmountRef = useRef(0);  // Use ref to persist scroll position
 
   useEffect(() => {
     const carousel = carouselRef.current;
-    let scrollAmount = 0;
+    let animationFrameId;
 
     const scrollImages = () => {
-      scrollAmount += 1; // Adjust this value for speed
-      if (scrollAmount >= carousel.scrollWidth / 2) {
-        scrollAmount = 0; // Reset scroll to loop seamlessly
+      if (!isPaused) {
+        scrollAmountRef.current += 0.5;
+        if (scrollAmountRef.current >= carousel.scrollWidth / 2) {
+          scrollAmountRef.current = 0;
+        }
+        carousel.scrollTo({
+          left: scrollAmountRef.current,
+          behavior: 'auto',
+        });
       }
-      carousel.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth', // Smooth scrolling
-      });
+      animationFrameId = requestAnimationFrame(scrollImages);
     };
 
-    // Determine the scroll speed based on window size
-    const isMobile = window.innerWidth <= 600; // You can adjust the breakpoint as needed
-    const intervalSpeed = isMobile ? 70 : 20; // Slower speed for mobile, faster for laptop
-
-    const interval = setInterval(scrollImages, intervalSpeed); // Set the scrolling speed
-    return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
+    animationFrameId = requestAnimationFrame(scrollImages);
+    
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isPaused]);
 
   return (
-    <div className="carousel-container m-4" ref={carouselRef}>
+    <div 
+      className="carousel-container m-4" 
+      ref={carouselRef}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="carousel-track">
         {/* Duplicate the images to create an infinite scrolling effect */}
         <img src="Screenshot 2024-10-18 170712.png" className="carousel-image sm:h-96 h-64" alt="Sports 1" />
