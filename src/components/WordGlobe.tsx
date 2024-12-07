@@ -9,7 +9,7 @@ import { TagCloudOptions } from "@frank-mayer/react-tag-cloud";
 const WordGlobe = () => {
   return (
     <>
-      <div className="text-sphere ">
+      <div className="text-sphere text-center flex justify-center items-center flex-col">
         <span className="tagcloud">
           <TagCloud
             className=""

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,122 +27,172 @@ const Navbar = () => {
     { name: 'Contact Us', href: '/contact' },
   ];
 
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-amber-100/95 backdrop-blur-lg shadow-md py-2 border-b border-amber-200' 
-        : 'bg-[#deded755] py-4'
-    }`}>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      className={`fixed w-full z-50 transition-all duration-500 ${
+        scrolled 
+          ? 'bg-white/90 backdrop-blur-lg shadow-lg py-2' 
+          : 'bg-transparent py-4'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo Section */}
-          <div className="flex-shrink-0 flex items-center">
+          <motion.div 
+            className="flex-shrink-0"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <Link to="/" className="flex items-center space-x-2">
               <img 
                 src="/Assets/new.png" 
                 alt="Logo" 
                 className={`transition-all duration-300 ${
                   scrolled ? 'h-16' : 'h-20'
-                } hover:scale-105`}
+                }`}
               />
             </Link>
-          </div>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-1">
             {menuLinks.map((link) => (
-              <Link
+              <motion.div
                 key={link.name}
-                to={link.href}
-                className={`relative px-3 py-2 text-base font-bold transition-all duration-300 group rounded-lg p-2 ${
-                  scrolled 
-                    ? isActive(link.href)
-                      ? 'text-amber-800 bg-[#fafaf9]'
-                      : 'text-amber-700 hover:text-amber-900'
-                    : isActive(link.href)
-                      ? 'text-amber-900 bg-[#fafaf9]'
-                      : 'text-amber-800 hover:text-amber-950 '
-                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {link.name}
-                <span className={`absolute bottom-0 left-0 w-full h-0.5 transform scale-x-0 transition-transform duration-300 ${
-                  scrolled ? 'bg-amber-500' : 'bg-amber-700'
-                } group-hover:scale-x-100`}></span>
-              </Link>
+                <Link
+                  to={link.href}
+                  className={`relative px-4 py-2 text-base font-bold transition-all duration-300 rounded-lg ${
+                    isActive(link.href)
+                      ? scrolled
+                        ? 'text-[#8B0000] bg-[#FFD700]/20'
+                        : 'text-[#FFD700] bg-white/20'
+                      : scrolled
+                        ? 'text-[#8B0000] hover:bg-[#FFD700]/10'
+                        : 'text-[#fff] hover:bg-white/10'
+                  }`}
+                >
+                  <span className="relative z-10 tracking-wide">{link.name}</span>
+                  {isActive(link.href) && (
+                    <motion.div
+                      layoutId="navbar-active"
+                      className={`absolute inset-0 rounded-lg ${
+                        scrolled 
+                          ? 'bg-[#FFD700]/20'
+                          : 'bg-white/20'
+                      }`}
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                </Link>
+              </motion.div>
             ))}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-6 py-2 rounded-full font-bold transition-all duration-300 ${
+                scrolled
+                  ? 'bg-[#8B0000] text-[#FFD700] hover:bg-[#6B0F1A] hover:text-white'
+                  : 'bg-[#FFD700] text-[#8B0000] hover:bg-white hover:text-[#8B0000]'
+              }`}
+            >
+              Join Now
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-lg transition-colors duration-300 ${
-                scrolled 
-                  ? 'text-amber-700 hover:bg-amber-200/50' 
-                  : 'text-amber-900 hover:bg-amber-100/50 bg-[#fafaf9]'
-              }`}
-            >
-              <span className="sr-only">Open menu</span>
-              <div className="w-6 h-6 flex items-center justify-center relative">
-                <span 
-                  className={`absolute w-6 h-0.5 transform transition-all duration-300 ${
-                    scrolled ? 'bg-amber-700' : 'bg-amber-900'
-                  } ${isOpen ? 'rotate-45' : '-translate-y-1'}`}
-                ></span>
-                <span 
-                  className={`absolute w-6 h-0.5 ${
-                    scrolled ? 'bg-amber-700' : 'bg-amber-900'
-                  } ${isOpen ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
-                ></span>
-                <span 
-                  className={`absolute w-6 h-0.5 transform transition-all duration-300 ${
-                    scrolled ? 'bg-amber-700' : 'bg-amber-900'
-                  } ${isOpen ? '-rotate-45' : 'translate-y-1'}`}
-                ></span>
-              </div>
-            </button>
-          </div>
+          <motion.button
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsOpen(!isOpen)}
+            className={`md:hidden p-2 rounded-lg ${
+              scrolled ? 'text-[#8B0000]' : 'text-[#FFD700]'
+            }`}
+          >
+            <div className="w-6 h-6 flex items-center justify-center relative">
+              <motion.span 
+                animate={{ 
+                  rotate: isOpen ? 45 : 0,
+                  translateY: isOpen ? 0 : -4
+                }}
+                className={`absolute w-6 h-0.5 ${
+                  scrolled ? 'bg-[#8B0000]' : 'bg-[#FFD700]'
+                }`}
+              />
+              <motion.span 
+                animate={{ 
+                  opacity: isOpen ? 0 : 1
+                }}
+                className={`absolute w-6 h-0.5 ${
+                  scrolled ? 'bg-[#8B0000]' : 'bg-[#FFD700]'
+                }`}
+              />
+              <motion.span 
+                animate={{ 
+                  rotate: isOpen ? -45 : 0,
+                  translateY: isOpen ? 0 : 4
+                }}
+                className={`absolute w-6 h-0.5 ${
+                  scrolled ? 'bg-[#8B0000]' : 'bg-[#FFD700]'
+                }`}
+              />
+            </div>
+          </motion.button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden transition-all duration-300 ease-in-out ${
-          isOpen 
-            ? 'max-h-96 opacity-100 mt-4' 
-            : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
-          <div className={`rounded-lg shadow-lg ring-1 ring-amber-200 ${
-            scrolled ? 'bg-amber-50' : 'bg-white'
-          } divide-y divide-amber-100`}>
-            <div className="pt-4 pb-6 px-5 space-y-6">
-              <div className="flex flex-col space-y-4">
-                {menuLinks.map((link) => (
-                  <Link
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden mt-4"
+            >
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                className="bg-white/95backdrop-blur-lg rounded-2xl shadow-xl p-4"
+              >
+                {menuLinks.map((link, index) => (
+                  <motion.div
                     key={link.name}
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`px-3 py-2 text-base font-medium rounded-md transition-colors duration-300 ${
-                      scrolled
-                        ? isActive(link.href)
-                          ? 'text-amber-900 bg-amber-100'
-                          : 'text-amber-700 hover:bg-amber-100 hover:text-amber-900'
-                        : isActive(link.href)
-                          ? 'text-amber-900 bg-amber-100'
-                          : 'text-amber-700 hover:bg-amber-100 hover:text-amber-900'
-                    }`}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    {link.name}
-                  </Link>
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+                        isActive(link.href)
+                          ? 'bg-[#FFD700]/20 text-[#8B0000] font-bold'
+                          : 'text-gray-600 hover:bg-[#FFD700]/10 hover:text-[#8B0000]'
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
                 ))}
-              </div>
-            </div>
-          </div>
-        </div>
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full mt-4 px-4 py-3 rounded-lg font-bold bg-[#8B0000] text-[#FFD700] hover:text-white hover:bg-[#6B0F1A] transition-all"
+                >
+                  Join Now
+                </motion.button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
