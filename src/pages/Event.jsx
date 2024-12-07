@@ -4,13 +4,19 @@ import logo from '../assets/shaurya.png';
 
 function Event() {
     return (
-        <div className="container mx-auto bg-orange-200">
+        <div className="container mx-auto bg-orange-200 pt-28">
             <div className="relative">
-                <img src="\carousel.jpg" alt="Athletes running on a track" className="w-full h-96 object-cover" />
-                <div className="absolute inset-0 flex items-center pl-8">
-                    <h1 className="text-5xl font-kaushan text-black">SHAURYA PRESENTS</h1>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmk6_aF93IuKJgww9H3E1yWzLTNv-bnbUcnA&s" alt="events-heading" className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-10xl text-orange-200 text-center" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+                        EVENTS
+                    </h1>
+
                 </div>
+
+
             </div>
+
             <div className="flex items-center justify-center my-8">
                 <img src={logo} alt="Logo" className="w-33 h-36 object-cover mr-4" />
                 <h2 className="text-3xl font-bold font-serif">GLIMPSES OF 2024 EVENTS</h2>
@@ -33,8 +39,8 @@ function Event() {
                 <div className="flex flex-col md:flex-row items-center py-12">
                     <img src="\engn day.jpg" alt="Engineers day poster" className="w-80 h-90 object-cover rounded-sm" />
                     <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-lg sm:text-xl px-4 sm:px-8 md:px-12 pr-6 sm:pr-10 md:pr-20">
-    <b className='text-xl sm:text-2xl font-serif'>ENGINEER'S DAY</b>, is an additional event organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, showcasing the diverse range of activities and competitions that NIT Raipur offers. The event includes various sports and cultural activities, promoting a spirit of unity and enthusiasm among the students. It is a day filled with excitement, teamwork, and memorable experiences, highlighting the vibrant campus life at NIT Raipur.Overall, the event successfully celebrated the synergy between engineering and sports, inspiring participants to appreciate the innovation that drives both fields forward.
-</p>
+                        <b className='text-xl sm:text-2xl font-serif'>ENGINEER'S DAY</b>, is an additional event organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, showcasing the diverse range of activities and competitions that NIT Raipur offers. The event includes various sports and cultural activities, promoting a spirit of unity and enthusiasm among the students. It is a day filled with excitement, teamwork, and memorable experiences, highlighting the vibrant campus life at NIT Raipur.Overall, the event successfully celebrated the synergy between engineering and sports, inspiring participants to appreciate the innovation that drives both fields forward.
+                    </p>
 
                 </div>
 
@@ -49,8 +55,8 @@ function Event() {
                 <div className="flex flex-col md:flex-row items-center mt-8 py-12">
                     <img src="\samar.jpg" alt="Additional Event poster" className="w-80 h-90 object-cover rounded-sm" />
                     <p className="mt-4 md:mt-0 md:ml-4 text-center md:text-left flex-1 text-lg sm:text-xl px-4 sm:px-8 md:px-12 pr-6 sm:pr-10 md:pr-20">
-    <b className='text-xl sm:text-2xl font-serif'>SAMAR</b> organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, the sports committee of NIT Raipur, is the institute's premier sports festival, bringing together students to compete in various sports like cricket, football, basketball, volleyball, and athletics. It promotes sportsmanship, teamwork, and fitness while fostering a vibrant atmosphere of competition and camaraderie. With enthusiastic participation and enthusiastic participation, Samar is a celebration of athletic passion and perseverance at NIT Raipur. It stands as a testament to the vibrant sports culture at NIT Raipur, uniting students through competition, camaraderie, and a shared passion for athletics.
-</p>
+                        <b className='text-xl sm:text-2xl font-serif'>SAMAR</b> organized by <span className='text-orange-700 font-bold'>SHAURYA</span>, the sports committee of NIT Raipur, is the institute's premier sports festival, bringing together students to compete in various sports like cricket, football, basketball, volleyball, and athletics. It promotes sportsmanship, teamwork, and fitness while fostering a vibrant atmosphere of competition and camaraderie. With enthusiastic participation and enthusiastic participation, Samar is a celebration of athletic passion and perseverance at NIT Raipur. It stands as a testament to the vibrant sports culture at NIT Raipur, uniting students through competition, camaraderie, and a shared passion for athletics.
+                    </p>
 
                 </div>
             </div>

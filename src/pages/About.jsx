@@ -2,7 +2,7 @@ import React from "react";
 
 export const About = () => {
   return (
-    <div className="bg-gradient-to-r from-[#F7EBD8] to-[#F1DBBF] min-h-screen py-10 px-5 sm:px-10 lg:px-20">
+    <div className="bg-gradient-to-r from-[#F7EBD8] to-[#F1DBBF] min-h-screen py-10 px-5 sm:px-10 lg:px-20 pt-28">
       <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="p-8 lg:p-12">
           {/* Header Section */}
